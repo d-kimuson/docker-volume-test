@@ -2,11 +2,13 @@ version: "3.7"
 
 services:
   uwsgi:
-    build: ./app
+    build: ./myapp
     container_name: uwsgi
     restart: always
     expose:
       - 8080
+    volumes:
+      - ./templates:/templates
   nginx:
     build: ./nginx
     container_name: nginx

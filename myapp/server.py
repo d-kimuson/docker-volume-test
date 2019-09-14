@@ -1,8 +1,12 @@
 from flask import Flask, render_template
+import os
+
+BASE_DIR = os.getcwd()
 
 app = Flask(__name__,
-            template_folder='templates',
-            static_folder='templates/static')
+            template_folder=os.path.join('/templates'),
+            static_folder=os.path.join('/templates/static')
+            )
 
 
 @app.route('/')
